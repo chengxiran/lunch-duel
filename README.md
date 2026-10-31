@@ -26,7 +26,9 @@ The game gives a clear error if fewer than two unique options are entered or if 
 
 ## Run it
 
-This is a static, dependency-free web project. Open index.html directly in a browser, or run a local web server from this folder with Python and visit http://localhost:8000.
+Play the live version here: [Night Market Showdown](https://chengxiran.github.io/lunch-duel/).
+
+This is also a static, dependency-free web project. To run it locally, open index.html directly in a browser, or start a local web server from this folder with Python and visit http://localhost:8000.
 
 ## Technology and limitations
 

@@ -32,6 +32,18 @@
         <div class="mood-row"><p>可用时间</p><div class="choice-set" data-group="time"><button type="button" data-value="10 分钟">10 分钟</button><button type="button" data-value="半小时" class="selected">半小时</button><button type="button" data-value="慢慢来">慢慢来</button></div></div>
         <div class="mood-row"><p>今晚心情</p><div class="choice-set" data-group="mood"><button type="button" data-value="求稳">求稳</button><button type="button" data-value="想吃辣" class="selected">想吃辣</button><button type="button" data-value="来点新鲜">来点新鲜</button></div></div>
       </fieldset>
+      <section class="intel-desk" aria-labelledby="intel-title">
+        <div class="intel-heading"><div><p class="tiny-label">附加玩法</p><h3 id="intel-title">夜市情报台</h3></div><button id="intel-btn" class="intel-trigger" type="button">领三张推荐条 <span>＋</span></button></div>
+        <p>还没想好候选项？告诉情报台你的预算和口味，它会给出三道可直接加入对决的建议。</p>
+        <div id="intel-panel" class="intel-panel is-hidden">
+          <div class="intel-options">
+            <label>预算<select id="budget-select"><option value="low">30 元以内</option><option value="mid" selected>30–50 元</option><option value="high">今天不设限</option></select></label>
+            <label>想吃的口感<select id="taste-select"><option value="spicy">香辣热乎</option><option value="light">清爽轻盈</option><option value="comfort">踏实管饱</option></select></label>
+          </div>
+          <button id="generate-btn" class="mini-stamp" type="button">摇出推荐</button>
+          <div id="recommendations" class="recommendations" aria-live="polite"></div>
+        </div>
+      </section>
       <div class="start-row"><p id="setup-error" class="error-message" role="alert" aria-live="polite"></p><button id="start-btn" class="stamp-button" type="button">盖章入场 <span>↘</span></button></div>
     </section>
     <section id="arena" class="screen arena is-hidden" aria-labelledby="arena-title">
@@ -43,7 +55,7 @@
         <div class="versus"><span>留</span><i>VS</i><span>弃</span></div>
         <button id="option-b" class="stall-card yellow-stall" type="button"><span class="stall-no">B</span><span class="food-name"></span><span class="food-note"></span><span class="pick">点它 <b>↗</b></span></button>
       </div>
-      <div class="arena-footer"><p id="memory-line">已淘汰 0 位对手。</p><button id="back-btn" class="rough-link" type="button">← 返回重新登记</button></div>
+      <div class="arena-footer"><p id="memory-line">已淘汰 0 位对手。</p><div><button id="rescue-btn" class="rescue-button" type="button">犹豫救援：抛一次硬币</button><button id="back-btn" class="rough-link" type="button">← 返回重新登记</button></div></div>
     </section>
     <section id="result" class="screen receipt-screen is-hidden" aria-labelledby="result-title">
       <div class="section-label"><span>03</span> 出摊结账</div>
@@ -54,6 +66,7 @@
         <p id="fortune" class="fortune"></p><p class="receipt-end">别截图问朋友了。现在就出门。</p>
       </div>
       <div class="result-controls"><button id="again-btn" class="stamp-button" type="button">原名单再战 <span>↻</span></button><button id="new-list-btn" class="rough-link" type="button">换一批候选项</button></div>
+      <section class="history-panel" aria-labelledby="history-title"><div class="history-head"><h3 id="history-title">你最近锁过的单</h3><button id="clear-history-btn" class="rough-link" type="button">清空记录</button></div><ol id="history-list" class="history-list"></ol></section>
     </section>
     <footer>本局不提供外卖链接，也不替你承担选择后的后悔。<span>© 胃口事务所</span></footer>
   </main><script src="script.js"></script>

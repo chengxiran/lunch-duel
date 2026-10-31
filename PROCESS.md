@@ -14,6 +14,14 @@ I also added the Market Intelligence Desk and local locked-order history. The re
 
 Two ordinary errors are handled: the game will not start with fewer than two unique options, and it asks the user to reduce a shortlist longer than eight options.
 
+## User trial
+
+I asked one classmate to use the game without explaining the interface first. She entered several lunch options and explored the opening screen before starting a showdown.
+
+She was unsure whether the Market Intelligence Desk was a required step or an optional feature. She also liked the visual style of the final receipt, but said that the options to restart with the same list or use a new shortlist should be more prominent.
+
+Based on this feedback, I changed the Market Intelligence Desk label to “Optional Bonus Mode” and added explicit text explaining that it can be skipped when the user already has a shortlist. I also changed the “Use a new shortlist” control on the final screen from a small text link to a full button matching the replay button. These changes make both the start of the game and the next action after a result easier to understand.
+
 ## AI tools
 
 I used OpenAI Codex to help draft the initial structure, identify error cases such as empty input, repeated options, and too many options, and check that the documentation met the assignment requirements.

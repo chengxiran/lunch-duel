@@ -1,0 +1,31 @@
+:root { --ink:#18221d; --cream:#fffaf0; --paper:#fffdf8; --coral:#ff765e; --blue:#77b8f2; --lime:#c9ef70; --muted:#69746c; --line:#dfe3d8; }
+* { box-sizing:border-box; }
+body { margin:0; min-height:100vh; color:var(--ink); background:radial-gradient(circle at 8% 10%, #ffe29d 0 9%, transparent 22%), radial-gradient(circle at 95% 86%, #c8eff0 0 11%, transparent 24%), var(--cream); font-family:"Noto Sans SC", sans-serif; }
+button, textarea { font:inherit; }
+button { cursor:pointer; }
+.app-shell { width:min(100% - 32px, 760px); margin:0 auto; padding:64px 0 42px; }
+.hero { margin-bottom:30px; }
+.eyebrow,.step,.round-label { margin:0; font:600 12px "DM Mono", monospace; letter-spacing:.08em; }
+.eyebrow,.step { color:#56645a; }
+h1,h2,p { margin-top:0; }
+h1 { margin:8px 0 9px; font-size:clamp(46px, 9vw, 72px); line-height:1; letter-spacing:-.07em; }
+.subtitle { max-width:485px; margin:0; color:var(--muted); font-size:16px; line-height:1.75; }
+.panel { padding:30px; border:1px solid rgba(24,34,29,.1); border-radius:22px; background:rgba(255,253,248,.88); box-shadow:0 15px 40px rgba(38,50,35,.08); }
+.panel-heading h2,.duel-topline h2 { margin:5px 0 5px; font-size:25px; letter-spacing:-.04em; }
+.panel-heading p:not(.step) { margin-bottom:22px; color:var(--muted); font-size:14px; }
+label { display:block; margin-bottom:8px; font-weight:700; font-size:14px; }
+textarea { width:100%; resize:vertical; min-height:130px; padding:14px; border:1px solid var(--line); border-radius:12px; color:var(--ink); background:#fff; outline:none; line-height:1.6; }
+textarea:focus { border-color:var(--ink); box-shadow:0 0 0 3px #c9ef7080; }
+.setup-actions,.result-actions { display:flex; align-items:center; justify-content:space-between; gap:16px; margin-top:18px; }
+.primary-button { border:0; border-radius:999px; padding:12px 19px; color:var(--ink); background:var(--lime); font-weight:800; box-shadow:inset 0 -2px rgba(0,0,0,.1); transition:transform .15s, box-shadow .15s; }
+.primary-button:hover { transform:translateY(-2px); box-shadow:0 5px 0 rgba(24,34,29,.2); }
+.text-button { padding:6px 0; border:0; color:#46574a; background:transparent; text-decoration:underline; text-underline-offset:4px; font-weight:600; }
+.error-message { min-height:20px; margin:10px 0 0; color:#b33427; font-size:13px; font-weight:600; }
+.is-hidden { display:none; }
+.duel-topline { display:flex; justify-content:space-between; gap:16px; align-items:flex-start; }
+.round-label { flex:none; padding-top:7px; color:var(--muted); }
+.progress-track { height:7px; margin:24px 0 15px; overflow:hidden; border-radius:9px; background:#edf0e9; }.progress-fill { height:100%; width:0; border-radius:inherit; background:var(--ink); transition:width .25s; }
+.duel-hint { margin:0 0 23px; color:var(--muted); font-size:14px; }.food-cards { display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:14px; }
+.food-card { min-height:180px; padding:24px 16px; border:2px solid transparent; border-radius:17px; color:var(--ink); font-size:clamp(21px, 4vw, 31px); font-weight:800; line-height:1.2; letter-spacing:-.05em; transition:transform .16s, border-color .16s; }.food-card:hover,.food-card:focus-visible { transform:translateY(-5px) rotate(-1deg); border-color:var(--ink); outline:none; }.food-card.blue:hover,.food-card.blue:focus-visible { transform:translateY(-5px) rotate(1deg); }.coral { background:var(--coral); }.blue { background:var(--blue); }.versus { font:700 16px "DM Mono",monospace; color:var(--muted); }.restart { margin-top:21px; }
+.result-panel { text-align:center; padding:49px 30px; }.winner-emoji { margin:12px 0 9px; font-size:55px; }.result-panel h2 { margin-bottom:8px; font-size:clamp(36px,7vw,55px); letter-spacing:-.065em; }.result-copy { max-width:410px; margin:0 auto; color:var(--muted); line-height:1.7; }.result-actions { justify-content:center; margin-top:25px; }.tip { margin:22px 3px 0; color:#506054; font-size:13px; }.tip span { color:#f49b27; }
+@media (max-width:560px) { .app-shell { width:min(100% - 24px,760px); padding-top:40px; }.panel { padding:22px; }.food-cards { grid-template-columns:1fr; gap:10px; }.food-card { min-height:112px; }.versus { justify-self:center; }.setup-actions,.result-actions { align-items:flex-start; flex-direction:column-reverse; }.primary-button { width:100%; }.duel-topline { display:block; }.round-label { padding-top:0; } }

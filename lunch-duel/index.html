@@ -1,9 +1,9 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="一场把纠结变成夜市闯关的午餐决定游戏。">
-  <title>夜市寻味局</title>
+  <meta name="description" content="A night-market game for deciding what to eat.">
+  <title>Night Market Showdown</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
@@ -12,63 +12,63 @@
   <div class="grain" aria-hidden="true"></div>
   <main class="site-shell">
     <header class="masthead">
-      <div class="brand-mark" aria-hidden="true">食</div>
-      <div><p class="kicker">NIGHT MARKET DECISION BUREAU · 06</p><h1>夜市寻味局</h1></div>
-      <p class="open-sign">今晚<br><strong>营业中</strong></p>
+      <div class="brand-mark" aria-hidden="true">NM</div>
+      <div><p class="kicker">NIGHT MARKET DECISION BUREAU · 06</p><h1>Night Market Showdown</h1></div>
+      <p class="open-sign">OPEN<br><strong>TONIGHT</strong></p>
     </header>
     <section id="setup" class="screen check-in" aria-labelledby="setup-title">
-      <div class="section-label"><span>01</span> 入场登记</div>
+      <div class="section-label"><span>01</span> CHECK IN</div>
       <div class="check-in-grid">
         <div class="intro-copy">
-          <p class="scribble">吃什么，不靠算命。</p><h2 id="setup-title">把纠结交给这条夜市。</h2>
-          <p>先报上你的候选午餐，再选三件影响今晚胃口的小事。接下来，你将亲自淘汰每一位对手。</p>
-          <div class="rules"><span>2–8 道候选</span><span>3 个胃口线索</span><span>一张最终小票</span></div>
+          <p class="scribble">No fortune telling. Just appetite.</p><h2 id="setup-title">Let the night market break the tie.</h2>
+          <p>List your lunch options, then set three clues about what you want tonight. You will personally eliminate every challenger.</p>
+          <div class="rules"><span>2–8 contenders</span><span>3 appetite clues</span><span>one final receipt</span></div>
         </div>
-        <div class="form-side"><label for="food-input">候选午餐名单</label><textarea id="food-input" rows="4" placeholder="牛肉粉、麻辣烫、日式咖喱、越南河粉"></textarea><button id="example-btn" class="rough-link" type="button">不知道写什么？装入夜市样本 →</button></div>
+        <div class="form-side"><label for="food-input">YOUR SHORTLIST</label><textarea id="food-input" rows="4" placeholder="ramen, tacos, curry, pho"></textarea><button id="example-btn" class="rough-link" type="button">Not sure? Load the market sample →</button></div>
       </div>
       <fieldset class="mood-form">
-        <legend>今晚的胃，偏向哪里？</legend>
-        <div class="mood-row"><p>饥饿程度</p><div class="choice-set" data-group="hunger"><button type="button" data-value="垫一口">垫一口</button><button type="button" data-value="正常吃" class="selected">正常吃</button><button type="button" data-value="饿狠了">饿狠了</button></div></div>
-        <div class="mood-row"><p>可用时间</p><div class="choice-set" data-group="time"><button type="button" data-value="10 分钟">10 分钟</button><button type="button" data-value="半小时" class="selected">半小时</button><button type="button" data-value="慢慢来">慢慢来</button></div></div>
-        <div class="mood-row"><p>今晚心情</p><div class="choice-set" data-group="mood"><button type="button" data-value="求稳">求稳</button><button type="button" data-value="想吃辣" class="selected">想吃辣</button><button type="button" data-value="来点新鲜">来点新鲜</button></div></div>
+        <legend>WHAT DOES YOUR APPETITE WANT?</legend>
+        <div class="mood-row"><p>Hunger level</p><div class="choice-set" data-group="hunger"><button type="button" data-value="a snack">A snack</button><button type="button" data-value="a proper meal" class="selected">A proper meal</button><button type="button" data-value="everything">Everything</button></div></div>
+        <div class="mood-row"><p>Time available</p><div class="choice-set" data-group="time"><button type="button" data-value="10 minutes">10 minutes</button><button type="button" data-value="half an hour" class="selected">Half an hour</button><button type="button" data-value="take my time">Take my time</button></div></div>
+        <div class="mood-row"><p>Tonight's mood</p><div class="choice-set" data-group="mood"><button type="button" data-value="play it safe">Play it safe</button><button type="button" data-value="spicy" class="selected">Spicy</button><button type="button" data-value="something new">Something new</button></div></div>
       </fieldset>
       <section class="intel-desk" aria-labelledby="intel-title">
-        <div class="intel-heading"><div><p class="tiny-label">附加玩法</p><h3 id="intel-title">夜市情报台</h3></div><button id="intel-btn" class="intel-trigger" type="button">领三张推荐条 <span>＋</span></button></div>
-        <p>还没想好候选项？告诉情报台你的预算和口味，它会给出三道可直接加入对决的建议。</p>
+        <div class="intel-heading"><div><p class="tiny-label">BONUS MODE</p><h3 id="intel-title">Market Intelligence Desk</h3></div><button id="intel-btn" class="intel-trigger" type="button">Get three leads <span>＋</span></button></div>
+        <p>Still building your list? Tell the desk your budget and craving to get three ideas you can send straight into the showdown.</p>
         <div id="intel-panel" class="intel-panel is-hidden">
           <div class="intel-options">
-            <label>预算<select id="budget-select"><option value="low">30 元以内</option><option value="mid" selected>30–50 元</option><option value="high">今天不设限</option></select></label>
-            <label>想吃的口感<select id="taste-select"><option value="spicy">香辣热乎</option><option value="light">清爽轻盈</option><option value="comfort">踏实管饱</option></select></label>
+            <label>BUDGET<select id="budget-select"><option value="low">Under $10</option><option value="mid" selected>$10–20</option><option value="high">No limit tonight</option></select></label>
+            <label>CRAVING<select id="taste-select"><option value="spicy">Spicy &amp; hot</option><option value="light">Fresh &amp; light</option><option value="comfort">Comfort food</option></select></label>
           </div>
-          <button id="generate-btn" class="mini-stamp" type="button">摇出推荐</button>
+          <button id="generate-btn" class="mini-stamp" type="button">Shake out ideas</button>
           <div id="recommendations" class="recommendations" aria-live="polite"></div>
         </div>
       </section>
-      <div class="start-row"><p id="setup-error" class="error-message" role="alert" aria-live="polite"></p><button id="start-btn" class="stamp-button" type="button">盖章入场 <span>↘</span></button></div>
+      <div class="start-row"><p id="setup-error" class="error-message" role="alert" aria-live="polite"></p><button id="start-btn" class="stamp-button" type="button">Stamp in <span>↘</span></button></div>
     </section>
     <section id="arena" class="screen arena is-hidden" aria-labelledby="arena-title">
-      <div class="section-label"><span>02</span> 摊位擂台</div>
-      <div class="arena-head"><div><p id="arena-chapter" class="chapter">第一盏灯</p><h2 id="arena-title">跟着第一反应走。</h2></div><div class="round-counter"><span id="round-count">01</span><small>ROUND</small></div></div>
-      <div class="route" aria-label="游戏进度"><div id="route-fill"></div></div><p id="market-call" class="market-call">摊主在叫号。只能留下一份。</p>
-      <div class="fight-board" role="group" aria-label="选择一份午餐">
-        <button id="option-a" class="stall-card red-stall" type="button"><span class="stall-no">A</span><span class="food-name"></span><span class="food-note"></span><span class="pick">点它 <b>↗</b></span></button>
-        <div class="versus"><span>留</span><i>VS</i><span>弃</span></div>
-        <button id="option-b" class="stall-card yellow-stall" type="button"><span class="stall-no">B</span><span class="food-name"></span><span class="food-note"></span><span class="pick">点它 <b>↗</b></span></button>
+      <div class="section-label"><span>02</span> STALL SHOWDOWN</div>
+      <div class="arena-head"><div><p id="arena-chapter" class="chapter">FIRST LIGHT</p><h2 id="arena-title">Follow your first instinct.</h2></div><div class="round-counter"><span id="round-count">01</span><small>ROUND</small></div></div>
+      <div class="route" aria-label="Game progress"><div id="route-fill"></div></div><p id="market-call" class="market-call">The vendors are calling. Only one stays.</p>
+      <div class="fight-board" role="group" aria-label="Choose a lunch">
+        <button id="option-a" class="stall-card red-stall" type="button"><span class="stall-no">A</span><span class="food-name"></span><span class="food-note"></span><span class="pick">Pick it <b>↗</b></span></button>
+        <div class="versus"><span>KEEP</span><i>VS</i><span>DROP</span></div>
+        <button id="option-b" class="stall-card yellow-stall" type="button"><span class="stall-no">B</span><span class="food-name"></span><span class="food-note"></span><span class="pick">Pick it <b>↗</b></span></button>
       </div>
-      <div class="arena-footer"><p id="memory-line">已淘汰 0 位对手。</p><div><button id="rescue-btn" class="rescue-button" type="button">犹豫救援：抛一次硬币</button><button id="back-btn" class="rough-link" type="button">← 返回重新登记</button></div></div>
+      <div class="arena-footer"><p id="memory-line">0 challengers eliminated.</p><div><button id="rescue-btn" class="rescue-button" type="button">Tie-breaker: flip a coin</button><button id="back-btn" class="rough-link" type="button">← Back to check in</button></div></div>
     </section>
     <section id="result" class="screen receipt-screen is-hidden" aria-labelledby="result-title">
-      <div class="section-label"><span>03</span> 出摊结账</div>
+      <div class="section-label"><span>03</span> CHECKOUT</div>
       <div class="receipt">
-        <div class="receipt-top"><span>夜市寻味局</span><span id="receipt-date"></span></div><p class="receipt-type">YOUR ORDER HAS BEEN DECIDED</p>
-        <div class="winner-block"><span>今晚就吃</span><h2 id="result-title"></h2><strong>✓ 已锁单</strong></div><div class="receipt-rule"></div>
-        <div class="receipt-line"><span>胃口线索</span><b id="profile-summary"></b></div><div class="receipt-line"><span>战胜对手</span><b id="defeat-count"></b></div><div class="receipt-rule short"></div>
-        <p id="fortune" class="fortune"></p><p class="receipt-end">别截图问朋友了。现在就出门。</p>
+        <div class="receipt-top"><span>Night Market Showdown</span><span id="receipt-date"></span></div><p class="receipt-type">YOUR ORDER HAS BEEN DECIDED</p>
+        <div class="winner-block"><span>TONIGHT, EAT</span><h2 id="result-title"></h2><strong>✓ ORDER LOCKED</strong></div><div class="receipt-rule"></div>
+        <div class="receipt-line"><span>APPETITE CLUES</span><b id="profile-summary"></b></div><div class="receipt-line"><span>CHALLENGERS BEATEN</span><b id="defeat-count"></b></div><div class="receipt-rule short"></div>
+        <p id="fortune" class="fortune"></p><p class="receipt-end">Stop polling the group chat. Go eat.</p>
       </div>
-      <div class="result-controls"><button id="again-btn" class="stamp-button" type="button">原名单再战 <span>↻</span></button><button id="new-list-btn" class="rough-link" type="button">换一批候选项</button></div>
-      <section class="history-panel" aria-labelledby="history-title"><div class="history-head"><h3 id="history-title">你最近锁过的单</h3><button id="clear-history-btn" class="rough-link" type="button">清空记录</button></div><ol id="history-list" class="history-list"></ol></section>
+      <div class="result-controls"><button id="again-btn" class="stamp-button" type="button">Run it again <span>↻</span></button><button id="new-list-btn" class="rough-link" type="button">Use a new shortlist</button></div>
+      <section class="history-panel" aria-labelledby="history-title"><div class="history-head"><h3 id="history-title">Your recent locked orders</h3><button id="clear-history-btn" class="rough-link" type="button">Clear history</button></div><ol id="history-list" class="history-list"></ol></section>
     </section>
-    <footer>本局不提供外卖链接，也不替你承担选择后的后悔。<span>© 胃口事务所</span></footer>
+    <footer>This game has no delivery links and accepts no responsibility for post-lunch regret.<span>© Appetite Bureau</span></footer>
   </main><script src="script.js"></script>
 </body>
 </html>

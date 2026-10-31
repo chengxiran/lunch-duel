@@ -2,20 +2,20 @@
 
 ## Starting idea
 
-我常常在午餐时间因为“每个都还可以”而迟迟无法决定。最初我想做一个推荐器，但推荐需要餐厅、位置和价格数据，也会把重点从互动体验移开。因此我把问题缩小为：能不能把一串二选一做成一场有节奏的夜市闯关，帮助用户听见自己当下的偏好？
+I often spend too long at lunchtime because several options all seem acceptable. My original idea was a recommendation tool, but a meaningful recommendation system would need live location, restaurant, and price data. That would make the project much larger and move the focus away from interaction design.
 
-目标用户是有 2–8 个午餐选项、想在一分钟内做决定的人。核心循环是：用户输入候选项 → 选择两张卡片之一 → 立即看见下一轮与进度 → 得到冠军，并可重来。
+I reduced the question to this: can a sequence of quick comparisons become a small night-market game that helps a person notice their own preference? The target user has two to eight options and wants to decide in about one minute. The central loop is: enter options → choose between two food cards → receive immediate feedback and the next challenger → get a final result and decide whether to play again.
 
-## Design and code change
+## Design and code changes
 
-第一版只计划显示两道菜和最终结果。实现后，我加入了三项胃口线索、夜市叫号文案、回合进度、不同章节标题和最终的点餐小票：没有这些反馈时，用户难以判断还要选多久，也不像一个完整的互动体验。还加入了“再来一局”和“换一组候选项”，让结果出来后下一步是明确的。
+The first version only showed two foods and a final result. I expanded it into three stages: a check-in, the stall showdown, and a printed-style checkout receipt. The check-in asks for hunger, time, and mood; the showdown adds chapter labels, progress, and market-call text; the result shows a locked-order receipt. These additions make the game’s progression visible rather than making it feel like an isolated button click.
 
-我也加入了两个普通错误处理：少于两个不同候选项时不给开始，并说明如何修正；超过八个候选项时提示缩减范围，避免对决变得拖沓。
+I also added the Market Intelligence Desk and local locked-order history. The recommendation feature uses only built-in menu data categorised by budget and craving, so it is reliable without an external service and does not pretend to show real-time restaurant information. History remains only in the current browser and can be cleared. A once-per-game coin flip gives users a bounded, explicit way to resolve a tie.
 
-后来我加入了“夜市情报台”和本地锁单记录。推荐功能只使用项目内部的、按预算和口感分类的菜单数据，不需要网络服务，也不会假装是实时餐厅信息；结果记录则只存放在当前浏览器，用户可清除。对非常难取舍的单轮，我加入每局限用一次的“犹豫救援”，把随机选择变成一个明确、有边界的游戏机制。
+Two ordinary errors are handled: the game will not start with fewer than two unique options, and it asks the user to reduce a shortlist longer than eight options.
 
 ## AI tools
 
-我使用 OpenAI Codex 协助生成项目的初步页面结构、列出作业所需文档，并提出“空输入/重复选项/候选项过多”的错误处理建议。
+I used OpenAI Codex to help draft the initial structure, identify error cases such as empty input, repeated options, and too many options, and check that the documentation met the assignment requirements.
 
-我保留了“以二选一淘汰赛作为唯一主互动”的建议，因为它让输入、响应与反馈关系清楚。我改变了“自动随机推荐午餐”的建议：随机结果不能反映用户的选择，因此改成每一轮都由用户点击决定。所有生成内容都经过人工审阅、测试和修改。
+I kept the suggestion to use a single elimination loop because it clearly connects user action, program response, and feedback. I changed the suggestion of automatic random food selection: a random winner would not reflect the user’s choice, so each round is decided by the user. All generated material was reviewed, tested, and edited by the author.

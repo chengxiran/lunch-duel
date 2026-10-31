@@ -1,50 +1,45 @@
-# 夜市寻味局
+# Night Market Showdown
 
-一个把午餐纠结变成夜市闯关的小网页。用户先填写候选午餐和三项“胃口线索”，再让每一道午餐在多轮擂台中由自己亲手淘汰，最后拿到一张“已锁单”的点餐小票。
+Night Market Showdown is a small interactive web game for people who cannot decide what to eat. Players enter a shortlist, set three appetite clues, and eliminate one food at a time until a final order is locked.
 
-![午餐对决的界面预览](assets/preview.svg)
+![Night Market Showdown interface preview](assets/preview.svg)
 
-## 给谁用？
+## Intended user
 
-给午餐时间到了、却在多个选项之间犹豫不决的人。它不试图替人判断“最好”的食物，而是把决定过程做成一场有节奏的夜市游戏，让用户根据第一反应做决定。
+This experience is for someone who has two to eight lunch options and wants to make a decision in about a minute. It does not claim to identify the objectively best food. Instead, it turns a low-pressure series of choices into a playful night-market showdown that helps the user notice their immediate preference.
 
-## 主要交互
+## Main interaction
 
-1. 输入 2–8 个午餐候选项（逗号、顿号或换行均可）。
-2. 选择饥饿程度、可用时间和心情三项胃口线索。
-3. 在摊位擂台中进行连续二选一；每轮都会显示叫号文案、进度和剩余对手。
-4. 最后查看“点餐小票”，其中包含胜者、胃口线索和淘汰记录；可以用同一名单重开，或换一组候选项。
+1. Enter 2–8 lunch options, separated by commas or line breaks.
+2. Set a hunger level, available time, and mood.
+3. Choose between two market-stall contenders in each round. The winner stays for the next challenger.
+4. Read the final receipt, which records the winner, appetite clues, and number of challengers beaten.
+5. Replay with the same shortlist or start a new one.
 
-附加功能：
+Extra features:
 
-- **夜市情报台**：选择预算和想吃的口感，获得三道本地内置推荐，并一键加入候选名单。
-- **犹豫救援**：每局可抛一次硬币，随机替你结束某一轮平局。
-- **锁单记录**：最近五次结果会保存在当前浏览器中，可随时清除；不会上传到服务器。
+- **Market Intelligence Desk:** choose a budget and craving to receive three built-in food ideas, then add any idea to the showdown.
+- **Tie-breaker:** flip a coin once per game when two options are impossible to separate.
+- **Locked-order history:** the most recent five results stay in the current browser and can be cleared at any time. No result is uploaded anywhere.
 
-如果没有至少两个不同的候选项，或候选项超过八个，页面会说明问题并阻止开始。
+The game gives a clear error if fewer than two unique options are entered or if the shortlist has more than eight options.
 
-## 如何运行
+## Run it
 
-这是一个无依赖的静态网页：直接双击 `index.html`，或在本目录启动任意静态服务器后打开即可。例如，安装了 Python 时：
+This is a static, dependency-free web project. Open index.html directly in a browser, or run a local web server from this folder with Python and visit http://localhost:8000.
 
-```bash
-python -m http.server 8000
-```
+## Technology and limitations
 
-然后访问 `http://localhost:8000`。
+The project uses plain HTML, CSS, and JavaScript: no framework, API, account, or paid service is required. The appetite clues enrich the game’s narrative but do not claim to provide live restaurant data, prices, nutrition, allergy guidance, distance, or opening times. The font files come from Google Fonts; the core experience still works with local fallback fonts when the service is unavailable.
 
-## 技术与限制
+## Files
 
-使用原生 HTML、CSS 和 JavaScript，没有外部框架或 API。程序只根据用户的连续二选一产生结果；胃口线索用于丰富每张摊位卡的叙事，而不会假装提供真实的距离、价格、过敏原、营业状态或营养信息。界面字体通过 Google Fonts 加载；若网络不可用，浏览器会使用本地后备字体，核心交互仍可正常工作。
+- index.html — page structure and accessible labels
+- style.css — responsive ticket-and-night-market visual design
+- script.js — game state, recommendations, tie-breaker, local history, and error handling
+- PROCESS.md — design and testing process
+- CREDITS.md — credits for tools and materials
 
-## 文件
+## AI disclosure
 
-- `index.html`：页面结构与可访问性标签
-- `style.css`：响应式视觉设计
-- `script.js`：候选项解析、对决状态和错误处理
-- `PROCESS.md`：设计与测试过程
-- `CREDITS.md`：素材、工具与代码致谢
-
-## AI 使用说明
-
-使用 OpenAI Codex 协助梳理页面结构、提出错误处理情境并检查文档完整性；交互规则、内容取舍与最终代码由作者审阅和修改。详情见 `PROCESS.md`。
+OpenAI Codex was used to help plan the page structure, identify error cases, and check documentation coverage. The author reviewed and edited the interaction rules, written content, visual direction, and final code. See PROCESS.md for detail.

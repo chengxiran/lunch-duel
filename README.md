@@ -2,7 +2,7 @@
 
 Night Market Showdown is a small interactive web game for people who cannot decide what to eat. Players enter a shortlist, set three appetite clues, and eliminate one food at a time until a final order is locked.
 
-![Night Market Showdown interface preview](assets/preview.svg)
+![Night Market Showdown interface preview](lunch-duel/assets/preview.svg)
 
 ## Intended user
 
@@ -28,7 +28,7 @@ The game gives a clear error if fewer than two unique options are entered or if 
 
 Play the live version here: [Night Market Showdown](https://chengxiran.github.io/lunch-duel/).
 
-This is also a static, dependency-free web project. To run it locally, open index.html directly in a browser, or start a local web server from this folder with Python and visit http://localhost:8000.
+This is also a static, dependency-free web project. To run it locally, open lunch-duel/index.html directly in a browser, or start a local web server from the repository root with Python and visit http://localhost:8000/lunch-duel/.
 
 ## Technology and limitations
 
@@ -36,11 +36,11 @@ The project uses plain HTML, CSS, and JavaScript: no framework, API, account, or
 
 ## Files
 
-- index.html — page structure and accessible labels
-- style.css — responsive ticket-and-night-market visual design
-- script.js — game state, recommendations, tie-breaker, local history, and error handling
-- PROCESS.md — design and testing process
-- CREDITS.md — credits for tools and materials
+- lunch-duel/index.html — page structure and accessible labels
+- lunch-duel/style.css — responsive ticket-and-night-market visual design
+- lunch-duel/script.js — game state, recommendations, tie-breaker, local history, and error handling
+- lunch-duel/PROCESS.md — design and testing process
+- lunch-duel/CREDITS.md — credits for tools and materials
 
 ## AI disclosure
 

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A night-market game for deciding what to eat.">
+  <title>Night Market Showdown</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <main class="site-shell">
+    <header class="masthead">
+      <div class="brand-mark" aria-hidden="true">NM</div>
+      <div><p class="kicker">NIGHT MARKET DECISION BUREAU · 06</p><h1>Night Market Showdown</h1></div>
+      <p class="open-sign">OPEN<br><strong>TONIGHT</strong></p>
+    </header>
+    <section id="setup" class="screen check-in" aria-labelledby="setup-title">
+      <div class="section-label"><span>01</span> CHECK IN</div>
+      <div class="check-in-grid">
+        <div class="intro-copy">
+          <p class="scribble">No fortune telling. Just appetite.</p><h2 id="setup-title">Let the night market break the tie.</h2>
+          <p>List your lunch options, then set three clues about what you want tonight. You will personally eliminate every challenger.</p>
+          <div class="rules"><span>2–8 contenders</span><span>3 appetite clues</span><span>one final receipt</span></div>
+        </div>
+        <div class="form-side"><label for="food-input">YOUR SHORTLIST</label><textarea id="food-input" rows="4" placeholder="ramen, tacos, curry, pho"></textarea><button id="example-btn" class="rough-link" type="button">Not sure? Load the market sample →</button></div>
+      </div>
+      <fieldset class="mood-form">
+        <legend>WHAT DOES YOUR APPETITE WANT?</legend>
+        <div class="mood-row"><p>Hunger level</p><div class="choice-set" data-group="hunger"><button type="button" data-value="a snack">A snack</button><button type="button" data-value="a proper meal" class="selected">A proper meal</button><button type="button" data-value="everything">Everything</button></div></div>
+        <div class="mood-row"><p>Time available</p><div class="choice-set" data-group="time"><button type="button" data-value="10 minutes">10 minutes</button><button type="button" data-value="half an hour" class="selected">Half an hour</button><button type="button" data-value="take my time">Take my time</button></div></div>
+        <div class="mood-row"><p>Tonight's mood</p><div class="choice-set" data-group="mood"><button type="button" data-value="play it safe">Play it safe</button><button type="button" data-value="spicy" class="selected">Spicy</button><button type="button" data-value="something new">Something new</button></div></div>
+      </fieldset>
+      <section class="intel-desk" aria-labelledby="intel-title">
+        <div class="intel-heading"><div><p class="tiny-label">OPTIONAL BONUS MODE</p><h3 id="intel-title">Market Intelligence Desk</h3></div><button id="intel-btn" class="intel-trigger" type="button">Get three leads <span>＋</span></button></div>
+        <p><strong>Optional:</strong> skip this desk if you already have a shortlist. Otherwise, tell it your budget and craving to get three ideas you can send straight into the showdown.</p>
+        <div id="intel-panel" class="intel-panel is-hidden">
+          <div class="intel-options">
+            <label>BUDGET<select id="budget-select"><option value="low">Under $10</option><option value="mid" selected>$10–20</option><option value="high">No limit tonight</option></select></label>
+            <label>CRAVING<select id="taste-select"><option value="spicy">Spicy &amp; hot</option><option value="light">Fresh &amp; light</option><option value="comfort">Comfort food</option></select></label>
+          </div>
+          <button id="generate-btn" class="mini-stamp" type="button">Shake out ideas</button>
+          <div id="recommendations" class="recommendations" aria-live="polite"></div>
+        </div>
+      </section>
+      <div class="start-row"><p id="setup-error" class="error-message" role="alert" aria-live="polite"></p><button id="start-btn" class="stamp-button" type="button">Stamp in <span>↘</span></button></div>
+    </section>
+    <section id="arena" class="screen arena is-hidden" aria-labelledby="arena-title">
+      <div class="section-label"><span>02</span> STALL SHOWDOWN</div>
+      <div class="arena-head"><div><p id="arena-chapter" class="chapter">FIRST LIGHT</p><h2 id="arena-title">Follow your first instinct.</h2></div><div class="round-counter"><span id="round-count">01</span><small>ROUND</small></div></div>
+      <div class="route" aria-label="Game progress"><div id="route-fill"></div></div><p id="market-call" class="market-call">The vendors are calling. Only one stays.</p>
+      <div class="fight-board" role="group" aria-label="Choose a lunch">
+        <button id="option-a" class="stall-card red-stall" type="button"><span class="stall-no">A</span><span class="food-name"></span><span class="food-note"></span><span class="pick">Pick it <b>↗</b></span></button>
+        <div class="versus"><span>KEEP</span><i>VS</i><span>DROP</span></div>
+        <button id="option-b" class="stall-card yellow-stall" type="button"><span class="stall-no">B</span><span class="food-name"></span><span class="food-note"></span><span class="pick">Pick it <b>↗</b></span></button>
+      </div>
+      <div class="arena-footer"><p id="memory-line">0 challengers eliminated.</p><div><button id="rescue-btn" class="rescue-button" type="button">Tie-breaker: flip a coin</button><button id="back-btn" class="rough-link" type="button">← Back to check in</button></div></div>
+    </section>
+    <section id="result" class="screen receipt-screen is-hidden" aria-labelledby="result-title">
+      <div class="section-label"><span>03</span> CHECKOUT</div>
+      <div class="receipt">
+        <div class="receipt-top"><span>Night Market Showdown</span><span id="receipt-date"></span></div><p class="receipt-type">YOUR ORDER HAS BEEN DECIDED</p>
+        <div class="winner-block"><span>TONIGHT, EAT</span><h2 id="result-title"></h2><strong>✓ ORDER LOCKED</strong></div><div class="receipt-rule"></div>
+        <div class="receipt-line"><span>APPETITE CLUES</span><b id="profile-summary"></b></div><div class="receipt-line"><span>CHALLENGERS BEATEN</span><b id="defeat-count"></b></div><div class="receipt-rule short"></div>
+        <p id="fortune" class="fortune"></p><p class="receipt-end">Stop polling the group chat. Go eat.</p>
+      </div>
+      <div class="result-controls"><button id="again-btn" class="stamp-button" type="button">Run it again <span>↻</span></button><button id="new-list-btn" class="stamp-button secondary-action" type="button">Use a new shortlist <span>→</span></button></div>
+      <section class="history-panel" aria-labelledby="history-title"><div class="history-head"><h3 id="history-title">Your recent locked orders</h3><button id="clear-history-btn" class="rough-link" type="button">Clear history</button></div><ol id="history-list" class="history-list"></ol></section>
+    </section>
+    <footer>This game has no delivery links and accepts no responsibility for post-lunch regret.<span>© Appetite Bureau</span></footer>
+  </main><script src="script.js"></script>
+</body>
+</html>

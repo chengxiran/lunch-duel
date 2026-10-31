@@ -1,72 +1,61 @@
 <!doctype html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="用连续二选一帮你决定今天吃什么。" />
-    <title>午餐对决 · 今天吃什么？</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <main class="app-shell">
-      <header class="hero">
-        <p class="eyebrow">LUNCH DECIDER · 01</p>
-        <h1>午餐对决</h1>
-        <p class="subtitle">别再纠结。选出更想吃的那一个，让下一轮帮你缩小范围。</p>
-      </header>
-
-      <section id="setup" class="panel setup-panel" aria-labelledby="setup-title">
-        <div class="panel-heading">
-          <p class="step">步骤 1 / 2</p>
-          <h2 id="setup-title">先放入候选午餐</h2>
-          <p>输入 2–8 个选项，用逗号、顿号或换行隔开。</p>
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="一场把纠结变成夜市闯关的午餐决定游戏。">
+  <title>夜市寻味局</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <main class="site-shell">
+    <header class="masthead">
+      <div class="brand-mark" aria-hidden="true">食</div>
+      <div><p class="kicker">NIGHT MARKET DECISION BUREAU · 06</p><h1>夜市寻味局</h1></div>
+      <p class="open-sign">今晚<br><strong>营业中</strong></p>
+    </header>
+    <section id="setup" class="screen check-in" aria-labelledby="setup-title">
+      <div class="section-label"><span>01</span> 入场登记</div>
+      <div class="check-in-grid">
+        <div class="intro-copy">
+          <p class="scribble">吃什么，不靠算命。</p><h2 id="setup-title">把纠结交给这条夜市。</h2>
+          <p>先报上你的候选午餐，再选三件影响今晚胃口的小事。接下来，你将亲自淘汰每一位对手。</p>
+          <div class="rules"><span>2–8 道候选</span><span>3 个胃口线索</span><span>一张最终小票</span></div>
         </div>
-        <label for="food-input">你的候选项</label>
-        <textarea id="food-input" rows="5" placeholder="例如：&#10;兰州拉面、麻辣烫、海南鸡饭、寿司"></textarea>
-        <div class="setup-actions">
-          <button id="example-btn" class="text-button" type="button">填入示例</button>
-          <button id="start-btn" class="primary-button" type="button">开始对决 <span aria-hidden="true">→</span></button>
-        </div>
-        <p id="setup-error" class="error-message" role="alert" aria-live="polite"></p>
-      </section>
-
-      <section id="duel" class="panel duel-panel is-hidden" aria-labelledby="duel-title">
-        <div class="duel-topline">
-          <div>
-            <p class="step">步骤 2 / 2</p>
-            <h2 id="duel-title">这一轮，更想吃哪一个？</h2>
-          </div>
-          <p id="round-label" class="round-label" aria-live="polite"></p>
-        </div>
-        <div class="progress-track" aria-hidden="true"><div id="progress-fill" class="progress-fill"></div></div>
-        <p class="duel-hint">不用想太久——凭第一反应选。</p>
-        <div class="food-cards" role="group" aria-label="选择一份午餐">
-          <button id="option-a" class="food-card coral" type="button"></button>
-          <span class="versus" aria-hidden="true">VS</span>
-          <button id="option-b" class="food-card blue" type="button"></button>
-        </div>
-        <p id="duel-error" class="error-message" role="alert" aria-live="polite"></p>
-        <button id="restart-from-duel" class="text-button restart" type="button">← 重新输入候选项</button>
-      </section>
-
-      <section id="result" class="panel result-panel is-hidden" aria-labelledby="result-title">
-        <p class="eyebrow">THE WINNER IS</p>
-        <p class="winner-emoji" aria-hidden="true">🍽️</p>
-        <h2 id="result-title"></h2>
-        <p id="result-reason" class="result-copy"></p>
-        <div class="result-actions">
-          <button id="again-btn" class="primary-button" type="button">再来一局 <span aria-hidden="true">↻</span></button>
-          <button id="new-list-btn" class="text-button" type="button">换一组候选项</button>
-        </div>
-      </section>
-
-      <aside class="tip" aria-label="使用提示">
-        <span aria-hidden="true">✦</span> 两个选项不分上下？选你现在最愿意下楼去买的那个。
-      </aside>
-    </main>
-    <script src="script.js"></script>
-  </body>
+        <div class="form-side"><label for="food-input">候选午餐名单</label><textarea id="food-input" rows="4" placeholder="牛肉粉、麻辣烫、日式咖喱、越南河粉"></textarea><button id="example-btn" class="rough-link" type="button">不知道写什么？装入夜市样本 →</button></div>
+      </div>
+      <fieldset class="mood-form">
+        <legend>今晚的胃，偏向哪里？</legend>
+        <div class="mood-row"><p>饥饿程度</p><div class="choice-set" data-group="hunger"><button type="button" data-value="垫一口">垫一口</button><button type="button" data-value="正常吃" class="selected">正常吃</button><button type="button" data-value="饿狠了">饿狠了</button></div></div>
+        <div class="mood-row"><p>可用时间</p><div class="choice-set" data-group="time"><button type="button" data-value="10 分钟">10 分钟</button><button type="button" data-value="半小时" class="selected">半小时</button><button type="button" data-value="慢慢来">慢慢来</button></div></div>
+        <div class="mood-row"><p>今晚心情</p><div class="choice-set" data-group="mood"><button type="button" data-value="求稳">求稳</button><button type="button" data-value="想吃辣" class="selected">想吃辣</button><button type="button" data-value="来点新鲜">来点新鲜</button></div></div>
+      </fieldset>
+      <div class="start-row"><p id="setup-error" class="error-message" role="alert" aria-live="polite"></p><button id="start-btn" class="stamp-button" type="button">盖章入场 <span>↘</span></button></div>
+    </section>
+    <section id="arena" class="screen arena is-hidden" aria-labelledby="arena-title">
+      <div class="section-label"><span>02</span> 摊位擂台</div>
+      <div class="arena-head"><div><p id="arena-chapter" class="chapter">第一盏灯</p><h2 id="arena-title">跟着第一反应走。</h2></div><div class="round-counter"><span id="round-count">01</span><small>ROUND</small></div></div>
+      <div class="route" aria-label="游戏进度"><div id="route-fill"></div></div><p id="market-call" class="market-call">摊主在叫号。只能留下一份。</p>
+      <div class="fight-board" role="group" aria-label="选择一份午餐">
+        <button id="option-a" class="stall-card red-stall" type="button"><span class="stall-no">A</span><span class="food-name"></span><span class="food-note"></span><span class="pick">点它 <b>↗</b></span></button>
+        <div class="versus"><span>留</span><i>VS</i><span>弃</span></div>
+        <button id="option-b" class="stall-card yellow-stall" type="button"><span class="stall-no">B</span><span class="food-name"></span><span class="food-note"></span><span class="pick">点它 <b>↗</b></span></button>
+      </div>
+      <div class="arena-footer"><p id="memory-line">已淘汰 0 位对手。</p><button id="back-btn" class="rough-link" type="button">← 返回重新登记</button></div>
+    </section>
+    <section id="result" class="screen receipt-screen is-hidden" aria-labelledby="result-title">
+      <div class="section-label"><span>03</span> 出摊结账</div>
+      <div class="receipt">
+        <div class="receipt-top"><span>夜市寻味局</span><span id="receipt-date"></span></div><p class="receipt-type">YOUR ORDER HAS BEEN DECIDED</p>
+        <div class="winner-block"><span>今晚就吃</span><h2 id="result-title"></h2><strong>✓ 已锁单</strong></div><div class="receipt-rule"></div>
+        <div class="receipt-line"><span>胃口线索</span><b id="profile-summary"></b></div><div class="receipt-line"><span>战胜对手</span><b id="defeat-count"></b></div><div class="receipt-rule short"></div>
+        <p id="fortune" class="fortune"></p><p class="receipt-end">别截图问朋友了。现在就出门。</p>
+      </div>
+      <div class="result-controls"><button id="again-btn" class="stamp-button" type="button">原名单再战 <span>↻</span></button><button id="new-list-btn" class="rough-link" type="button">换一批候选项</button></div>
+    </section>
+    <footer>本局不提供外卖链接，也不替你承担选择后的后悔。<span>© 胃口事务所</span></footer>
+  </main><script src="script.js"></script>
+</body>
 </html>

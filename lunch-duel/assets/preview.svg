@@ -1,12 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="午餐对决界面预览">
-  <rect width="1200" height="630" fill="#fffaf0"/>
-  <circle cx="100" cy="70" r="120" fill="#ffe29d"/><circle cx="1120" cy="570" r="130" fill="#c8eff0"/>
-  <text x="105" y="105" fill="#56645a" font-family="monospace" font-size="18">LUNCH DECIDER · 01</text>
-  <text x="100" y="180" fill="#18221d" font-family="sans-serif" font-size="66" font-weight="800">午餐对决</text>
-  <text x="104" y="220" fill="#69746c" font-family="sans-serif" font-size="24">别再纠结。选出更想吃的那一个。</text>
-  <rect x="100" y="270" width="1000" height="270" rx="28" fill="#fffdf8" stroke="#dfe3d8"/>
-  <text x="145" y="325" fill="#56645a" font-family="monospace" font-size="16">步骤 2 / 2</text>
-  <text x="145" y="375" fill="#18221d" font-family="sans-serif" font-size="32" font-weight="700">这一轮，更想吃哪一个？</text>
-  <rect x="145" y="415" width="355" height="90" rx="16" fill="#ff765e"/><rect x="700" y="415" width="355" height="90" rx="16" fill="#77b8f2"/>
-  <text x="260" y="470" fill="#18221d" font-family="sans-serif" font-size="29" font-weight="700">兰州拉面</text><text x="580" y="470" fill="#56645a" font-family="monospace" font-size="22">VS</text><text x="820" y="470" fill="#18221d" font-family="sans-serif" font-size="29" font-weight="700">寿司</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="夜市寻味局界面预览">
+  <rect width="1200" height="630" fill="#21372f"/>
+  <rect x="80" y="92" width="1040" height="470" fill="#e8e2d3" stroke="#14201c" stroke-width="4"/>
+  <rect x="94" y="106" width="1012" height="442" fill="none" stroke="#14201c" stroke-opacity=".25"/>
+  <circle cx="123" cy="139" r="19" fill="#14201c"/><text x="115" y="146" fill="#e8e2d3" font-family="monospace" font-size="14">02</text>
+  <text x="155" y="145" fill="#14201c" font-family="monospace" font-size="17" font-weight="700">摊位擂台</text>
+  <text x="130" y="207" fill="#d94a31" font-family="monospace" font-size="16" font-weight="700">第一盏灯</text>
+  <text x="130" y="255" fill="#14201c" font-family="sans-serif" font-size="37" font-weight="800">跟着第一反应走。</text>
+  <rect x="130" y="285" width="830" height="9" fill="#c9c3b6" stroke="#14201c"/><rect x="130" y="285" width="260" height="9" fill="#d94a31"/>
+  <text x="130" y="327" fill="#5c665f" font-family="sans-serif" font-size="18">摊主在叫号。只能留下一份。</text>
+  <rect x="130" y="360" width="370" height="145" fill="#d94a31" stroke="#14201c" stroke-width="3"/>
+  <rect x="700" y="360" width="370" height="145" fill="#e7b830" stroke="#14201c" stroke-width="3"/>
+  <text x="153" y="389" fill="#14201c" font-family="monospace" font-size="16">A</text><text x="153" y="452" fill="#14201c" font-family="sans-serif" font-size="39" font-weight="800">重庆小面</text>
+  <text x="723" y="389" fill="#14201c" font-family="monospace" font-size="16">B</text><text x="723" y="452" fill="#14201c" font-family="sans-serif" font-size="39" font-weight="800">泰式炒河粉</text>
+  <circle cx="600" cy="433" r="30" fill="#e8e2d3" stroke="#14201c" stroke-width="3"/><text x="583" y="440" fill="#14201c" font-family="monospace" font-size="18">VS</text>
+  <text x="80" y="61" fill="#f6f0e4" font-family="cursive" font-size="39">夜市寻味局</text><text x="934" y="58" fill="#f6f0e4" font-family="monospace" font-size="13">今晚 · 营业中</text>
 </svg>
